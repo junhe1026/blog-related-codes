@@ -17,13 +17,13 @@ def show(show_type):
 
 
 @show('name')
-def add(a, b):
+def addd(a, b):
 	print(a+b)
 
 @show('blabla')
-def div(a, b):
+def divv(a, b):
 	"""division function"""
 	print(a/b)
 
-add(1,2)
-div(10,5)
+addd(1,2)
+divv(10,5)

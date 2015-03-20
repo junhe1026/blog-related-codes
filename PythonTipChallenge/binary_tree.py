@@ -6,7 +6,12 @@ import queue
 
 
 class BinTreeNode(object):
-    """A binary Tree node class"""
+    """
+    A binary Tree node class
+    >>> n1 = BinTreeNode(value=1)
+    >>> n1.value
+    1
+    """
 
     def __init__(self, value=None, left_child=None, right_child=None):
         self._value = value
@@ -155,6 +160,9 @@ if __name__ == '__main__':
     btree = BinTree(n5)
     print('height:', btree.height())
     print('is_BST?:', btree.is_BST())
+    # another way of doctest
+    import doctest
+    doctest.testmod(verbose=True)
 
 
 

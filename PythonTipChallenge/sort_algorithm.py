@@ -53,7 +53,7 @@ def quick_sort(l):
     if len(l) <= 1:
         return l
     else:
-        pivot = l[random.randint(0, len(l))]
+        pivot = l[random.randint(0, len(l)-1)]
         l_left = [i for i in l if i < pivot]
         l_right = [i for i in l if i > pivot]
         return quick_sort(l_left)+[pivot]+quick_sort(l_right)
@@ -92,14 +92,38 @@ def merge(left, right):
             i += 1
     return result
 
-
-
+# class quick_sort(object):
+#     """移动单指针"""
+#     def _partition(self, alist, p, r):
+#         i = p-1
+#         x = alist[r]
+#         for j in range(p, r):
+#             if alist[j] <= x:
+#                 # 从左往右遍历，把比pivot小的，从左往右放
+#                 i += 1
+#                 alist[i], alist[j] = alist[j], alist[i]
+#         # 把pivot放到所有小的数的最右边
+#         alist[i+1], alist[r] = alist[r], alist[i+1]
+#         return i+1
+#
+#     def _quicksort(self, alist, p, r):
+#         if p < r:
+#             q = self._partition(alist, p, r)
+#             self._quicksort(alist, p, q-1)
+#             self._quicksort(alist, q+1, r)
+#
+#     def __call__(self, sort_list):
+#         self._quicksort(sort_list, 0, len(sort_list)-1)
+#         return sort_list
 
 
 if __name__ == '__main__':
     l = [95, 45, 15, 78, 84, 51, 24, 12]
-    # print(bubble_sort(l))
+    print(bubble_sort(l))
     # print(selection_sort(l))
     # print(quick_sort(l))
     # print(insertion_sort(l))
-    print(merge_sort(l))
+    # print(merge_sort(l))
+    # a = quick_sort()
+    # r = a(l)
+    # print(r)
